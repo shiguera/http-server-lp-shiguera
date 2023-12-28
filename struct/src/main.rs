@@ -36,4 +36,7 @@ fn main() {
   let language = Lang::French;
   let w: Vec<Greeting> = v.clone().into_iter().filter(|g| g.lang==language).collect();
   println!("{:?} {}", w[0].lang, w[0].message);
+  if let Some(chinese) = v.iter().find(|g| g.lang == Lang::Chinese) {
+      println!("Chinese greeting is {}", chinese.message);
+  }
 }
